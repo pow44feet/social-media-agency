@@ -1,0 +1,15 @@
+//Миксины
+@mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;/*font-size: 0;*/}
+@mixin flexorder($val){-webkit-box-ordinal-group: $val;-moz-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-order: $val;order: $val;}
+
+
+//Fonts
+@mixin font-xlight() {font-family: Poppins; font-weight: 200;}
+@mixin font-light() {font-family: Poppins; font-weight: 300;}
+@mixin font-regular() {font-family: Poppins; font-weight: 400;}
+@mixin font-medium() {font-family: Poppins; font-weight: 500;}
+@mixin font-sbold() {font-family: Poppins; font-weight: 600;}
+
+//animation
+@mixin anim_ease-in-03() {transition: all ease-in .3s;}
+@mixin anim035() {transition: all ease-in-out .35s;}
