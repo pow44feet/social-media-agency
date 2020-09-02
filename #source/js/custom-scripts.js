@@ -94,6 +94,9 @@ $(document).ready(function () {
    
 });
 
+   
+
+
 /*$(document).ready(function(){
   $('.introduction__slider').slick({
     arrows: false,
@@ -127,7 +130,7 @@ $(window).on("load resize", function(){
       $(".introduction-slide-item").css('display', 'block');
       $('.introduction__slider').not('.slick-initialized').slick({  
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         fade: true,
       });

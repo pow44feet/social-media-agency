@@ -638,6 +638,10 @@
 </script>
 <script src="js/scripts.js"></script>
 <script src="js/custom-scripts.js"></script>
+<script>
+   if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+       document.write('<script src="js/ieimg.js"><\/script>');
+</script>
 
 </body>
 </html>

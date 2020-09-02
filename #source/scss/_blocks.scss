@@ -160,6 +160,7 @@
     		margin-bottom: 50px;
 		}
 		&__image {
+         width: 100%;
 			flex: 1 1 auto;
 			margin-left: auto;
 		}
@@ -234,7 +235,8 @@
 	@include flexbox();
 	margin: 0 auto;
 	padding: 33px 52px;
-	background: linear-gradient(left, #00c6ff, #0072ff);
+   background: linear-gradient(left, #00c6ff, #0072ff);
+   background: -ms-linear-gradient(left, #00c6ff, #0072ff);
 	border: 0;
 	border-radius: 48px;
 	&:before {
@@ -524,6 +526,5 @@
    height: 2px;
    display: block;
    background-color: $gray-line;
-
 }
 /* LINES */

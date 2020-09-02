@@ -253,6 +253,7 @@ textarea:focus:-ms-input-placeholder {
     margin-bottom: 50px;
   }
   .benefits-item__image {
+    width: 100%;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -386,6 +387,7 @@ textarea:focus:-ms-input-placeholder {
   background: -webkit-linear-gradient(left, #00c6ff, #0072ff);
   background: -o-linear-gradient(left, #00c6ff, #0072ff);
   background: linear-gradient(left, #00c6ff, #0072ff);
+  background: -ms-linear-gradient(left, #00c6ff, #0072ff);
   border: 0;
   border-radius: 48px;
 }
@@ -840,6 +842,7 @@ body.lock {
 
 /* HEADER */
 .header {
+  overflow: hidden;
   padding: 80px 0 60px;
 }
 
@@ -933,6 +936,9 @@ body.lock {
   }
   .header__top {
     margin-bottom: 60px;
+  }
+  .header__body {
+    margin-bottom: 150px;
   }
   .header__bottom-empty {
     text-align: center;
@@ -1268,6 +1274,7 @@ body.lock {
 @media (max-width: 1920px) {
   .header-body__image img {
     max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -1283,6 +1290,12 @@ body.lock {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+  .header-body__column {
+    max-width: 100%;
+  }
+  .header-body__column:first-child {
+    margin-bottom: 40px;
   }
 }
 
@@ -1365,6 +1378,10 @@ body.lock {
     display: -webkit-flex;
     display: flex;
     /*font-size: 0;*/
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    max-width: 50%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -1383,6 +1400,7 @@ body.lock {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 50%;
     flex: 1 1 50%;
+    max-width: 50%;
     margin-bottom: 40px;
     text-align: center;
   }
@@ -1405,6 +1423,11 @@ body.lock {
     flex-direction: column;
   }
   .services-line__description {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
     text-align: center;
   }
   .services-line__text {
@@ -1427,6 +1450,15 @@ body.lock {
   }
   .services-examples__item:last-child {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 429.98px) {
+  .services-examples__item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
@@ -1491,12 +1523,14 @@ body.lock {
   top: 0;
   left: 0;
   z-index: 1;
+  display: block;
   width: 100%;
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, from(#0072ff), to(#00c6ff));
   background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
   background: -o-linear-gradient(left, #0072ff, #00c6ff);
   background: linear-gradient(left, #0072ff, #00c6ff);
+  background: -ms-linear-gradient(left, #0072ff, #00c6ff);
   opacity: .95;
 }
 
@@ -1783,6 +1817,13 @@ body.lock {
 }
 
 .rate-box__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-flex: 0;
   -ms-flex: 0 1 400px;
   flex: 0 1 400px;
@@ -2028,13 +2069,13 @@ body.lock {
 }
 
 /*rate-item blocks media quaries*/
-@media (max-width: 1199.98px) {
+@media (max-width: 1199.97px) {
   .rate-item-size__min, .rate-item-size__mid, .rate-item-size__max {
     height: 100%;
   }
   .rate-item {
     z-index: 2;
-    /*buttons properties*/
+    /*buttons gradient blur properties disable cause edge do what he want*/
   }
   .rate-item .rate-item {
     /*blocks properties*/
@@ -2075,12 +2116,8 @@ body.lock {
     z-index: -1;
     width: 100px;
     height: 45px;
-    background: -webkit-gradient(linear, left top, right top, from(#00fffc), to(#00de88));
-    background: -webkit-linear-gradient(left, #00fffc, #00de88);
-    background: -o-linear-gradient(left, #00fffc, #00de88);
-    background: linear-gradient(to right, #00fffc, #00de88);
-    -webkit-filter: blur(15px);
-    filter: blur(15px);
+    /* background: linear-gradient(to right, #00fffc, #00de88);
+               filter: blur(15px); */
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
