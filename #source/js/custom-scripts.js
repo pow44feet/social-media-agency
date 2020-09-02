@@ -130,7 +130,7 @@ $(window).on("load resize", function(){
       $(".introduction-slide-item").css('display', 'block');
       $('.introduction__slider').not('.slick-initialized').slick({  
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 5000,
         fade: true,
       });
