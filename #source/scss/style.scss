@@ -488,7 +488,12 @@ body {
 }
 @media (max-width:429.98px){
    .services-examples {
-      &__item {flex: 1 1 100%; max-width: 100%;}
+      &__item {
+         flex: 1 1 100%;
+         max-width: 100%;
+         margin-bottom: 40px;
+         &:last-child {margin-bottom: 0;}
+      }
    }
 }
 /* HEADER-BOTTOM */

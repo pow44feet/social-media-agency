@@ -120,7 +120,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function(){
-$(window).on("load resize", function(){
+   $(window).on("load resize", function(){
     var width = $(document).width();
     
     if (width <= 899.98) {
@@ -138,6 +138,40 @@ $(window).on("load resize", function(){
   });
 });
 
+
+/*
+$(document).ready(function(){
+   $(window).on("load resize", function(){
+      var width = $(document).width();
+      var wow = array();
+      
+      if (width <= 899.98) {
+      $('.introduction__slider').slick('unslick');
+      $(".introduction-slide-item").css('display', 'none');
+      } else {
+      $(".introduction-slide-item").css('display', 'block');
+      $('.introduction__slider').not('.slick-initialized').slick({  
+         arrows: false,
+         autoplay: true,
+         autoplaySpeed: 5000,
+         fade: true,
+      });
+      }
+   });
+});
+
+
+wow = new WOW(
+   {
+   boxClass:     'wow',      // default
+   animateClass: 'animated', // default
+   offset:       0,          // default
+   mobile:       true,       // default
+   live:         true        // default
+}
+)
+wow.init();
+*/
 
 /*
 magnific-popup initalize

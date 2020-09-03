@@ -1459,6 +1459,10 @@ body.lock {
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
     max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .services-examples__item:last-child {
+    margin-bottom: 0;
   }
 }
 

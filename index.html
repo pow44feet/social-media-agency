@@ -50,7 +50,7 @@
 					</nav>
 				</div>
 				<div class="header__body header-body">
-					<div class="header-body__column">
+					<div class="header-body__column wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="0.6s">
 						<div class="header-body__title">
 							<div class="header-title">Increase Your 
 													  Social Media Presence</div>
@@ -60,22 +60,22 @@
 														 with 25% DISCOUNT for all services in week-ends.</div>
 						</div>
 						<div class="header-body__links">
-							<a class="header-body__link" href="#">
+							<a class="header-body__link " href="#">
 								<img src="images/header/googleplay.png" alt="" />
 							</a>
 							<a class="header-body__link" href="#">
-								<img src="images/header/appstore.png" alt="" />
+								<img src="images/header/appstore.png"alt="" />
 							</a>
 						</div>
 					</div>
-					<div class="header-body__column">
+					<div class="header-body__column wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.6s">
 						<div class="header-body__image">
 							<img src="images/header/illustration.png" alt="" />
 						</div>
 					</div>
 				</div>
 				<div class="header__bottom services-line">
-					<div class="services-line__description">
+					<div class="services-line__description wow fadeInLeft" data-wow-delay="0.2s">
 						<div class="services-line__title">
 							<div class="title-medium">How we can help you?</div>
 						</div>
@@ -85,14 +85,13 @@
 							</div>
 						</div>
 						<div class="services-line__button">
-							<button class="btn-normal btn-medium-size btn-arrow btn-shadow"
-							data-move="header__bottom-empty,0,799.98">
+							<button class="btn-normal btn-medium-size btn-arrow btn-shadow" data-move="header__bottom-empty,0,799.98">
 								<span>Our Services</span>
 							</button>
 						</div>
 					</div>
 					<div class="services-line__examples services-examples">
-						<div class="services-examples__item">
+						<div class="services-examples__item wow bounceInUp" data-wow-delay="0.1s">
 							<div class="services-examples__image">
 								<img src="images/header/examples/01.png" alt="" />
 							</div>
@@ -105,7 +104,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="services-examples__item">
+						<div class="services-examples__item wow bounceInUp" data-wow-offset="60" data-wow-delay="0.2s">
 							<div class="services-examples__image">
 								<img src="images/header/examples/02.png" alt="" />
 							</div>
@@ -118,7 +117,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="services-examples__item">
+						<div class="services-examples__item wow bounceInUp" data-wow-offset="60" data-wow-delay="0.3s">
 							<div class="services-examples__image">
 								<img src="images/header/examples/03.png" alt="" />
 							</div>
@@ -131,7 +130,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="services-examples__item">
+						<div class="services-examples__item wow bounceInUp" data-wow-offset="60" data-wow-delay="0.4s">
 							<div class="services-examples__image">
 								<img src="images/header/examples/04.png" alt="" />
 							</div>
@@ -246,7 +245,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="benefits-item__image">
+                  <div class="benefits-item__image wow fadeInRight" data-wow-offset="60" data-wow-delay="0.2s">
                      <picture>
                         <source srcset="images/benefits/01.webp" type="image/webp" />
                         <img src="images/benefits/01.jpg" alt="" />
@@ -254,7 +253,7 @@
                   </div>
                </div>
                <div class="benefits__item benefits-item">
-                  <div class="benefits-item__image">
+                  <div class="benefits-item__image wow fadeInLeft" data-wow-offset="60" data-wow-delay="0.2s">
                      <picture>
                         <source srcset="images/benefits/02.webp" type="image/webp" />
                         <img src="images/benefits/02.jpg" alt="" />
@@ -390,7 +389,7 @@
 			</div>
 			<div class="rate__body">
 				<div class="rate-box">
-					<div class="rate-box__item">
+					<div class="rate-box__item wow bounceIn" data-wow-offset="60" data-wow-delay="0.3s">
 						<div class="rate-item rate-item-size__min">
 							<div class="rate-item__header">
 								<div class="rate-item__header-box">
@@ -430,7 +429,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="rate-box__item">
+					<div class="rate-box__item wow bounceIn" data-wow-offset="60" data-wow-delay="0.3s">
 						<div class="rate-item rate-item-size__max">
 							<div class="rate-item__header">
 								<div class="rate-item__header-box">
@@ -479,7 +478,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="rate-box__item">
+					<div class="rate-box__item wow bounceIn" data-wow-offset="60" data-wow-delay="0.3s">
 						<div class="rate-item rate-item-size__mid">
 							<div class="rate-item__header">
 								<div class="rate-item__header-box">
@@ -641,6 +640,9 @@
 <script>
    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
        document.write('<script src="js/ieimg.js"><\/script>');
+</script>
+<script>
+   new WOW().init();
 </script>
 
 </body>
