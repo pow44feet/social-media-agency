@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/lite-yt-embed.css">
+	<!-- <link rel="stylesheet" href="css/lite-yt-embed.css"> -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -209,10 +209,22 @@
 					</div>
 				</div>
 				<div class="introduction__video">
-					<div class="wrap-video-169 yt-lazyload" data-id="introduction-v1" data-thumb="" data-logo="1">
+
+					<!-- <div class="wrap-video-169 yt-lazyload" data-id="introduction-v1" data-thumb="" data-logo="1">
 						<iframe width="780" height="437" src="https://www.youtube.com/embed/9m45nVsvvEY?controls=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					</div>
-					
+               </div> -->
+
+               <div class="wrap-video">
+                  <a class="wrap-video__link" href="https://youtu.be/9m45nVsvvEY">
+                     <picture>
+                        <source srcset="https://i.ytimg.com/vi_webp/9m45nVsvvEY/maxresdefault.webp" type="image/webp">
+                        <img class="wrap-video__media" src="https://i.ytimg.com/vi/9m45nVsvvEY/maxresdefault.jpg" alt="Enter to Social Media">
+                     </picture>
+                  </a>
+                  <button class="wrap-video__button" aria-label="запустить видео">
+                     <svg width="68" height="48" viewBox="0 0 68 48"><path class="wrap-video__button-shape" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"></path><path class="wrap-video__button-icon" d="M 45,24 27,14 27,34"></path></svg>
+                  </button>
+               </div>
 				</div>
 			</div>	
 			
@@ -648,7 +660,7 @@
 <script>
    new WOW().init();
 </script>
-<script>
+<!-- <script>
    /*!
  * Youtube LazyLoad 
  * v4.0.1
@@ -782,6 +794,59 @@
     }
     
 })();
+</script> -->
+<script>
+   function findVideos() {
+    let videos = document.querySelectorAll('.wrap-video');
+
+    for (let i = 0; i < videos.length; i++) {
+        setupVideo(videos[i]);
+    }
+}
+
+function setupVideo(video) {
+    let link = video.querySelector('.wrap-video__link');
+    let media = video.querySelector('.wrap-video__media');
+    let button = video.querySelector('.wrap-video__button');
+    let id = parseMediaURL(media);
+
+    video.addEventListener('click', () => {
+        let iframe = createIframe(id);
+
+        link.remove();
+        button.remove();
+        video.appendChild(iframe);
+    });
+
+    link.removeAttribute('href');
+    video.classList.add('wrap-video--enabled');
+}
+
+function parseMediaURL(media) {
+    let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+    let url = media.src;
+    let match = url.match(regexp);
+
+    return match[1];
+}
+
+function createIframe(id) {
+    let iframe = document.createElement('iframe');
+
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('src', generateURL(id));
+    iframe.classList.add('wrap-video__media');
+
+    return iframe;
+}
+
+function generateURL(id) {
+    let query = '?rel=0&showinfo=0&autoplay=1';
+
+    return 'https://www.youtube.com/embed/' + id + query;
+}
+
+findVideos();
 </script>
 
 </body>

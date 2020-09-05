@@ -1472,6 +1472,12 @@ body.lock {
   max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  /* &__video {
+		iframe body {
+				background-color: transparent !important;
+				border-radius: 12px !important;
+		}
+	} */
 }
 
 .introduction__content {
@@ -1487,7 +1493,7 @@ body.lock {
   top: 86px;
   left: 50%;
   z-index: 2;
-  max-width: 780px;
+  width: 780px;
   text-align: center;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -1510,11 +1516,6 @@ body.lock {
 
 .introduction__text {
   margin-bottom: 70px;
-}
-
-.introduction__video iframe body {
-  background-color: transparent !important;
-  border-radius: 12px !important;
 }
 
 .color-filter {
@@ -1553,6 +1554,64 @@ body.lock {
   object-position: center;
 }
 
+/*fake youtube embed window*/
+.wrap-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.wrap-video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.wrap-video__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 68px;
+  height: 48px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.wrap-video__button-shape {
+  fill: #212121;
+  fill-opacity: .8;
+}
+
+.wrap-video__button-icon {
+  fill: #fff;
+}
+
+/*fake youtube embed window hover and focus*/
+.wrap-video:hover .wrap-video__button-shape,
+.wrap-video__button:focus .wrap-video__button-shape {
+  fill: #ff0000;
+  fill-opacity: 1;
+}
+
+.wrap-video--enabled {
+  cursor: pointer;
+}
+
+.wrap-video--enabled .wrap-video__button {
+  display: block;
+}
+
 /*Introduction media quaries*/
 @media (min-width: 900px) and (max-width: 917px) {
   .introduction {
@@ -1574,21 +1633,31 @@ body.lock {
     width: 100%;
     padding: 80px 45px 80px;
   }
-  .wrap-video-169 {
-    position: relative;
-    height: 0;
-    padding-bottom: 56.25%;
-    overflow: hidden;
-  }
-  .wrap-video-169 iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-width: 0;
-    outline-width: 0;
-  }
+  /* .wrap-video-169 {
+      position: relative;
+      width: 100%;
+		height: 0;
+      padding-bottom: 56.25%;
+      background-color: #000;
+      overflow: hidden;
+      &__media {
+         position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+         height: 100%;
+         border: none;
+      }
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-width: 0;
+			outline-width: 0;
+		}
+	} */
 }
 
 @media (max-width: 795px) {
